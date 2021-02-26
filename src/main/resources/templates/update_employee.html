@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class = "container">
+    <h1>Employee Management System</h1>
+    <hr>
+    <h2>Update Employee</h2>
+    <form action = "#" th:action = "@{/saveEmployee}" th:object = "${employee}" method = "POST" >
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}"/>
+        <label>First Name:</label>
+        <input type="text" th:field = "*{firstName}"  class = "form-control mb-4 col-4">
+
+        <label>Last Name:</label>
+        <input type="text" th:field = "*{lastName}"  class = "form-control mb-4 col-4">
+
+        <label>Email:</label>
+        <input type="text" th:field = "*{email}"  class = "form-control mb-4 col-4">
+
+        <label>Age:</label>
+        <input type="text" th:field = "*{age}"  class = "form-control mb-4 col-4">
+
+        <label>Position:</label>
+        <input type="text" th:field = "*{position}"  class = "form-control mb-4 col-4">
+
+        <label>Salary:</label>
+        <input type="text" th:field = "*{salary}"  class = "form-control mb-4 col-4">
+
+        <label>Leave Status:</label>
+        <input type="text" th:field = "*{leaveStatus}"  class = "form-control mb-4 col-4">
+
+        <label>Type of Leave:</label>
+        <input type="text" th:field = "*{natureOfLeave}"  class = "form-control mb-4 col-4">
+
+        <label>Address:</label>
+        <input type="text" th:field = "*{address}"  class = "form-control mb-4 col-4">
+
+        <label>Phone Number:</label>
+        <input type="text" th:field = "*{phoneNumber}"  class = "form-control mb-4 col-4">
+
+        <label>State of Origin:</label>
+        <input type="text" th:field = "*{stateOfOrigin}"  class = "form-control mb-4 col-4">
+
+        <label>Marital Status:</label>
+        <input type="text" th:field = "*{maritalStatus}"  class = "form-control mb-4 col-4">
+
+        <label>Religion:</label>
+        <input type="text" th:field = "*{religion}"  class = "form-control mb-4 col-4">
+
+        <label>Qualification:</label>
+        <input type="text" th:field = "*{qualification}"  class = "form-control mb-4 col-4">
+
+        <label>Years of experience:</label>
+        <input type="text" th:field = "*{yearsOfExperience}"  class = "form-control mb-4 col-4">
+        <hr>
+        <button type="submit" class = "btn btn-info col-2">Update Employee Details</button>
+    </form>
+</div>
+</body>
+</html>

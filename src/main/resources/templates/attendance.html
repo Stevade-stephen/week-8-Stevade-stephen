@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee's Attendance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<form action="#" th:action="@{/employees/{employeeId}/attendance(employeeId=${attendance.employee.id})}" method="post" th:object="${attendance}">
+    <input class="form-control" type="hidden" th:field="*{id}" /><br/>
+    <label>Week No: </label>
+    <input class="form-control" type="text" th:field="*{weekNumber}" /><br/>
+
+    <label>Monday: </label>
+    <input class="form-control" type="text" th:field="*{monday}" /><br/>
+
+    <label>Tuesday: </label>
+    <input class="form-control" type="text" th:field="*{tuesday}" /><br/>
+
+    <label>Wednesday: </label>
+    <input class="form-control" type="text" th:field="*{wednesday}" /><br/>
+
+    <label class="fo">Thursday: </label>
+    <input class="form-control" type="text" th:field="*{thursday}" /><br/>
+
+    <label class="fo">Friday: </label>
+    <input class="form-control" type="text" th:field="*{friday}" /><br/>
+
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>
+</body>
+</html>

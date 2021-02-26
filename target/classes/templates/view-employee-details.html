@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+    <h2 style="text-align: center">EMPLOYEE DETAILS</h2>
+    <div th:object="${employee}">
+        <div>
+            <label>First Name:</label>
+            <span th:text="*{firstName}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <span th:text="*{lastName}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Email Address:</label>
+            <span th:text="*{email}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Age:</label>
+            <span th:text="*{age}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Position:</label>
+            <span th:text="*{position}"class = "form-control mb-2 col-2" ></span>
+        </div>
+        <div>
+            <label>Salary:</label>
+            <span th:text="*{salary}" class = "form-control mb-2 col-2" ></span>
+        </div>
+        <div>
+            <label>Leave Status:</label>
+            <span th:text="*{leaveStatus}" class = "form-control mb-2 col-2"></span>
+
+            <label>Nature of Leave:</label>
+            <span th:text="*{natureOfLeave}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Address:</label>
+            <span th:text="*{address}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Phone Number:</label>
+            <span th:text="*{phoneNumber}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>State of Origin:</label>
+            <span th:text="*{stateOfOrigin}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Marital Status:</label>
+            <span th:text="*{maritalStatus}" class = "form-control mb-2 col-2" ></span>
+        </div>
+        <div>
+            <label>Religion:</label>
+            <span th:text="*{religion}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Qualification:</label>
+            <span th:text="*{qualification}" class = "form-control mb-2 col-2"></span>
+        </div>
+        <div>
+            <label>Years of Experience:</label>
+            <span th:text="*{yearsOfExperience}" class = "form-control mb-2 col-2" ></span>
+        </div>
+    </div>
+    <hr>
+    <a th:href="@{/employees/{id}/attendance(id=*{id})}" class="btn btn-primary">Add Attendance</a>
+    <hr>
+
+    <h4 style="text-align: center">Attendance Status</h4>
+    <div align="center">
+        <table border="2" class = "table table-stripped table-responsive-md">
+            <thead>
+            <tr>
+                <th>Week Number</th>
+                <th>Weekdays</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Week No</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr th:each="attendance : ${employeeAttendance}">
+                <td th:text="${attendance.weekNumber}"></td>
+                <td th:text="${attendance.monday}"></td>
+                <td th:text="${attendance.tuesday}"></td>
+                <td th:text="${attendance.wednesday}"></td>
+                <td th:text="${attendance.thursday}"></td>
+                <td th:text="${attendance.friday}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/employee}" class="btn btn-success">Go home</a>
+    </div>
+
+    </body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    background: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg")
+    no-repeat bottom fixed #000;
+    background-size: cover;
+}
+
+#hero-img {
+    height: 100vh;
+}
+
+#login-form {
+    background: linear-gradient(rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+#circle {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    border: 0.3rem solid #f8f8f8;
+    position: relative;
+    bottom: 2rem;
+    margin: auto;
+}
+
+.hero-text {
+    font-family: "Roboto Slab", serif;
+    font-size: 3rem;
+}
+
+.fas,
+.fa-user {
+    color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    font-size: 4.5rem;
+}
+
+.card {
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 100%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.btn {
+    border-color: #2473bd;
+    color: #2473bd;
+}
+
+.btn:hover {
+    border-color: #094f91;
+    color: #094f91;
+    background: #094f91;
+    color: #fff;
+}
+
+.btn:active {
+    border-color: #094f91;
+    color: #094f91;
+    background: #094f91;
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    #hero-img {
+        height: 0vh;
+    }
+
+    #login-form {
+        height: 100vh;
+    }
+}

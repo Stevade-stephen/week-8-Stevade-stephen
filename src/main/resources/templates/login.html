@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <link th:href="@{styles.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div id="hero-img" class="col img-fluid d-flex align-items-center justify-content-center">
+            <h1 class="hero-text text-light d-none d-lg-block ">Admin Login</h1>
+        </div>
+        <div id="login-form" class="col-lg d-flex align-items-center justify-content-center">
+
+            <form class="w-75" th:action="@{/login}" method="post" th:object="${admin}">
+                <!-- Not to sure about the line below, d-flex alone centered the icon in the circle. ask about this 7-20-2020 -->
+                <div id="circle" class="d-flex"><i class="fas fa-user"></i></div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+<!--                            <label for="username"></label>-->
+                            <input type="text" th:field = "*{username}"class="form-control"   placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+<!--                            <label for="password"></label>-->
+                            <input type="password" th:field = "*{password}" class="form-control"  placeholder="Password">
+                        </div>
+                        <button type="submit" id="btn" class="btn btn-block">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+</html>
